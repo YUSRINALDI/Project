@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TRWEBDB" Class="DelloiteDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IHSANFULL;Initial Catalog=TRWEBDB;User ID=sa" SettingsObjectName="DelloiteTRLib.Properties.Settings" SettingsPropertyName="TRWEBDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Assetsliabilities" Member="Assetsliabilities">
+    <Type Name="Assetsliability">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="account" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Assetsliability_Overseas_Asset" Member="Overseas_Assets" ThisKey="id" OtherKey="as_id" Type="Overseas_Asset" />
+      <Association Name="User_Assetsliability" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Assetsliability1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="suspended" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="roleid" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="fullname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="created" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updated" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="token" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tokendate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_Assetsliability" Member="Assetsliabilities" ThisKey="username" OtherKey="createdby" Type="Assetsliability" />
+      <Association Name="User_Assetsliability1" Member="Assetsliabilities1" ThisKey="username" OtherKey="updatedby" Type="Assetsliability" />
+      <Association Name="User_Calculation" Member="Calculations" ThisKey="username" OtherKey="createdby" Type="Calculation" />
+      <Association Name="User_Calculation1" Member="Calculations1" ThisKey="username" OtherKey="updatedby" Type="Calculation" />
+      <Association Name="User_Exchange" Member="Exchanges" ThisKey="username" OtherKey="createdby" Type="Exchange" />
+      <Association Name="User_Exchange1" Member="Exchanges1" ThisKey="username" OtherKey="updatedby" Type="Exchange" />
+      <Association Name="User_Family" Member="Families" ThisKey="username" OtherKey="createdby" Type="Family" />
+      <Association Name="User_Family1" Member="Families1" ThisKey="username" OtherKey="updatedby" Type="Family" />
+      <Association Name="User_IEIncome" Member="IEIncomes" ThisKey="username" OtherKey="createdby" Type="IEIncome" />
+      <Association Name="User_IEIncome1" Member="IEIncomes1" ThisKey="username" OtherKey="updatedby" Type="IEIncome" />
+      <Association Name="User_Irregular" Member="Irregulars" ThisKey="username" OtherKey="createdby" Type="Irregular" />
+      <Association Name="User_Irregular1" Member="Irregulars1" ThisKey="username" OtherKey="updatedby" Type="Irregular" />
+      <Association Name="User_Marital" Member="Maritals" ThisKey="username" OtherKey="createdby" Type="Marital" />
+      <Association Name="User_Marital1" Member="Maritals1" ThisKey="username" OtherKey="updatedby" Type="Marital" />
+      <Association Name="User_Overseas_Asset" Member="Overseas_Assets" ThisKey="username" OtherKey="createdby" Type="Overseas_Asset" />
+      <Association Name="User_Overseas_Asset1" Member="Overseas_Assets1" ThisKey="username" OtherKey="updatedby" Type="Overseas_Asset" />
+      <Association Name="User_Overseas_Capital" Member="Overseas_Capitals" ThisKey="username" OtherKey="createdby" Type="Overseas_Capital" />
+      <Association Name="User_Overseas_Capital1" Member="Overseas_Capitals1" ThisKey="username" OtherKey="updatedby" Type="Overseas_Capital" />
+      <Association Name="User_Overseas_Detailed" Member="Overseas_Detaileds" ThisKey="username" OtherKey="createdby" Type="Overseas_Detailed" />
+      <Association Name="User_Overseas_Detailed1" Member="Overseas_Detaileds1" ThisKey="username" OtherKey="updatedby" Type="Overseas_Detailed" />
+      <Association Name="User_Overseas_Income" Member="Overseas_Incomes" ThisKey="username" OtherKey="createdby" Type="Overseas_Income" />
+      <Association Name="User_Overseas_Income1" Member="Overseas_Incomes1" ThisKey="username" OtherKey="updatedby" Type="Overseas_Income" />
+      <Association Name="User_Overseas_Rental" Member="Overseas_Rentals" ThisKey="username" OtherKey="createdby" Type="Overseas_Rental" />
+      <Association Name="User_Overseas_Rental1" Member="Overseas_Rentals1" ThisKey="username" OtherKey="updatedby" Type="Overseas_Rental" />
+      <Association Name="User_Relationship" Member="Relationships" ThisKey="username" OtherKey="createdby" Type="Relationship" />
+      <Association Name="User_Relationship1" Member="Relationships1" ThisKey="username" OtherKey="updatedby" Type="Relationship" />
+      <Association Name="User_TaxForm" Member="TaxForms" ThisKey="username" OtherKey="createdby" Type="TaxForm" />
+      <Association Name="User_TaxForm1" Member="TaxForms1" ThisKey="username" OtherKey="updatedby" Type="TaxForm" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Calculation" Member="Calculations">
+    <Type Name="Calculation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaxPayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="calc_rounded_b1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_b8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_b9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_01" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_01" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_15" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_17" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_18" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_19" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_21" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_22" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_25" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_26" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_27" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_28" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_29" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_30" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_31" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_32" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_33" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_34" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_35" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_36" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_37" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_38" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_39" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_40" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_41" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_42" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_43" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_44" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_45" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_46" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_47" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_48" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_49" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_50" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_51" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_52" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_53" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_54" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_55" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_56" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_57" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_58" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_59" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_60" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_61" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_62" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_63" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_64" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_65" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_66" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_67" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_68" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_69" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_70" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_71" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_72" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_rounded_73" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_15" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_17" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_18" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_19" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_21" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_22" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_25" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_26" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_27" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_28" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_29" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_30" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_31" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_32" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_33" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_34" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_35" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_36" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_37" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_38" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_39" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_40" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_41" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_42" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_43" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_44" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_45" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_46" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_47" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_48" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_49" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_50" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_51" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_52" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_53" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_54" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_55" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_56" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_57" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_58" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_59" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_60" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_61" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_62" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_63" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_64" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_65" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_66" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_67" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_68" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_69" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_70" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_71" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_72" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="calc_not_73" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Calculation" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Calculation1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="COY_RCB_Key" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COY_NAME_Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Company_Company" Member="Company2" ThisKey="COY_RCB_Key" OtherKey="COY_RCB_Key" Type="Company" Cardinality="One" />
+      <Association Name="Company_Emp_CompanyDet" Member="Emp_CompanyDets" ThisKey="COY_RCB_Key" OtherKey="Company_Key" Type="Emp_CompanyDet" />
+      <Association Name="Company_EngagementTeam" Member="EngagementTeams" ThisKey="COY_RCB_Key" OtherKey="Company_Key" Type="EngagementTeam" />
+      <Association Name="Company_Company" Member="Company1" ThisKey="COY_RCB_Key" OtherKey="COY_RCB_Key" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Emp_CompanyDet" Member="Emp_CompanyDets">
+    <Type Name="Emp_CompanyDet">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MasterId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LocalCompany_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParticularId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Emp_CompanyDet_TaxPlayerDetail" Member="TaxPlayerDetail" ThisKey="ParticularId" OtherKey="ParticularId" Type="TaxPlayerDetail" Cardinality="One" />
+      <Association Name="Company_Emp_CompanyDet" Member="Company" ThisKey="Company_Key" OtherKey="COY_RCB_Key" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EngagementTeam" Member="EngagementTeams">
+    <Type Name="EngagementTeam">
+      <Column Name="EngagementId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Company_Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PIC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMIC2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SIC2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AIC1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AIC2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AIC3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Company_EngagementTeam" Member="Company" ThisKey="Company_Key" OtherKey="COY_RCB_Key" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Exchange" Member="Exchanges">
+    <Type Name="Exchange">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="interval" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Exchange" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Exchange1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Family" Member="Families">
+    <Type Name="Family">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaxPayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Relationship" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Birthdate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Occupation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NIK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Family" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Family1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="Relationship_Family" Member="Relationship1" ThisKey="Relationship" OtherKey="id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IEIncome" Member="IEIncomes">
+    <Type Name="IEIncome">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="field1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field3" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field4" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field5" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field6" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field7" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field8" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field9" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field10" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field11" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field12" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field13" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field14" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field15" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field16" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field17" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field18" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field19" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field20" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field21" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field22" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field23" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field24" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field25" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field26" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field27" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field28" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="field29" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_IEIncome" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_IEIncome1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Irregular" Member="Irregulars">
+    <Type Name="Irregular">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data3" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data4" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data5" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data6" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data7" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data8" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data9" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="data10" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Irregular" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Irregular1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LocalCompany" Member="LocalCompanies">
+    <Type Name="LocalCompany">
+      <Column Name="IDLocal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCompany" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Local_Company_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marital" Member="Maritals">
+    <Type Name="Marital">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dependant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Marital" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Marital1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Overseas_Asset" Member="Overseas_Assets">
+    <Type Name="Overseas_Asset">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="as_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="as_refnumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_details" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_balancedate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_interval" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_originalcurrency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_exchrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_inrupiah" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="as_owner" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="as_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="as_account" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="as_country" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Assetsliability_Overseas_Asset" Member="Assetsliability" ThisKey="as_id" OtherKey="id" Type="Assetsliability" IsForeignKey="true" />
+      <Association Name="User_Overseas_Asset" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Overseas_Asset1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Overseas_Capital" Member="Overseas_Capitals">
+    <Type Name="Overseas_Capital">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cap_description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_sellingdate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_interval" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_exchrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_proceeds" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_cost" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_gainloss" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_taxpaid" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_gainlossrp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_taxpaidrp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cap_irregularincome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Overseas_Capital" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Overseas_Capital1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Overseas_Detailed" Member="Overseas_Detaileds">
+    <Type Name="Overseas_Detailed">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="line" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dateofreceipt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="interval" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="exchrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fullyearincome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="incomecurrency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="taxpaidcurrency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="incomerp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="taxpaidrp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="treatyrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ftc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="allowedftc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="irregularincome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Overseas_Detailed" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Overseas_Detailed1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Overseas_Income" Member="Overseas_Incomes">
+    <Type Name="Overseas_Income">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dateofreceipt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="interval" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="exchrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="incomecurrency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="taxpaidcurrency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="incomerp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="taxpaidrp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="treatyrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ftc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="allowedftc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="irregularincome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Overseas_Income" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Overseas_Income1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Overseas_Rental" Member="Overseas_Rentals">
+    <Type Name="Overseas_Rental">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaxPlayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ren_information" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_dateofreceipt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_interval" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_exchrate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_amountcurrency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_amountrp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ren_irregularincome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Overseas_Rental" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Overseas_Rental1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relationship" Member="Relationships">
+    <Type Name="Relationship">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="relationship" Member="relationship1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Family" Member="Families" ThisKey="id" OtherKey="Relationship" Type="Family" />
+      <Association Name="User_Relationship" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_Relationship1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaxForm" Member="TaxForms">
+    <Type Name="TaxForm">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ammend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="taxidnumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="t1s1f2" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="t1s1f4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s1f5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s1f6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s1f7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s1f8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f9" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f11" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f12" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f13" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f14" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f15" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f16" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f17" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f18" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f19" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f20" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f21" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f22" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f23" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s2f24" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s3f1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s3f2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s3f3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f9" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f11" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f12" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f13" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f14" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f15" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f16" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f17" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f18" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f19" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f20" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f21" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f22" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f23" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f24" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f25" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f26" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f27" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f28" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f29" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f30" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f31" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f32" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f33" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f34" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f35" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f36" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f37" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f38" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f39" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f40" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f41" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f42" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f43" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f44" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f45" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f46" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f47" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f48" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f49" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f50" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f51" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f52" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f53" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f54" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s4f55" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f9" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f11" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f12" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f13" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f14" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f15" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f16" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f17" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f18" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f19" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f20" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f21" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f22" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f23" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f24" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s6f25" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f9" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f11" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f12" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f13" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f14" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f15" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f16" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f17" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f18" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f19" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f20" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f21" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f22" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f23" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f24" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f25" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f26" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f27" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f28" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f29" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f30" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f31" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f32" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f33" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f34" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f35" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f36" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f37" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f38" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s7f39" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f9" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f11" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f12" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f13" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f14" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f15" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f16" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f17" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f18" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f19" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f20" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f21" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f22" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f23" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f24" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f25" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f26" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f27" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f28" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f29" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f30" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f31" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f32" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f33" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f34" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f35" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f36" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f37" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f38" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f39" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f40" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f41" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f42" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="t1s8f43" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalemployee" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalperiod" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalsalaries" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincome" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalother" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalhonorarium" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalinsurance" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalbenefit" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalbonus" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalgross" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalcost" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalpension" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalpensioncost" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincome25" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincome26" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincome27" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincome28" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincome29" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totaldeductions" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalnetincome" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalincometax" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalprevnetincome" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="totalprevincometax" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total7" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total8" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total9" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total11" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total12" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total13" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total14" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total15" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total16" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total17" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total18" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total19" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total20" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total21" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total22" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total23" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total24" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total25" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="total26" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabirregulartotal1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabirregulartotal2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="lbltotalsummary1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="lbltotalsummary2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset4" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset5" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset6" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tabasset10" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ren_netamountcurrency" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ren_netamountrp" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ren_nettaxpaidcurrency" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ren_nettaxpaidexchrate" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ren_nettaxpaidamountrp" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="irregulartaxcredit" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tab3nettotalasset" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tab3nettotalliabilities" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="tab3netasset" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updatedby" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="updateddate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_TaxForm" Member="User" ThisKey="createdby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="User_TaxForm1" Member="User1" ThisKey="updatedby" OtherKey="username" Type="User" IsForeignKey="true" />
+      <Association Name="TaxPlayerDetail_TaxForm" Member="TaxPlayerDetail" ThisKey="taxidnumber" OtherKey="TaxRefNo" Type="TaxPlayerDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaxPlayerDetails" Member="TaxPlayerDetails">
+    <Type Name="TaxPlayerDetail">
+      <Column Name="ParticularId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TaxPayerNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxRefNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxPayerName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TaxPlayerDetail_TaxForm" Member="TaxForms" ThisKey="TaxRefNo" OtherKey="taxidnumber" Type="TaxForm" />
+      <Association Name="Emp_CompanyDet_TaxPlayerDetail" Member="Emp_CompanyDet" ThisKey="ParticularId" OtherKey="ParticularId" Type="Emp_CompanyDet" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

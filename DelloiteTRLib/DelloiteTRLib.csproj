@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D3F2846-85B0-4994-9B1B-5895DE93551E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DelloiteTRLib</RootNamespace>
+    <AssemblyName>DelloiteTRLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExchangeEnum.cs" />
+    <Compile Include="Database\DatabaseFactory.cs" />
+    <Compile Include="Database\SqlDataReaderHelper.cs" />
+    <Compile Include="Database\SqlServerDatabase.cs" />
+    <Compile Include="DataContext\Delloite.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delloite.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Assetsliabilities.cs" />
+    <Compile Include="Model\AssetType.cs" />
+    <Compile Include="Model\Calculation.cs" />
+    <Compile Include="Model\Asset.cs" />
+    <Compile Include="Model\com.cs" />
+    <Compile Include="Model\et.cs" />
+    <Compile Include="Model\ec.cs" />
+    <Compile Include="Model\Irregular.cs" />
+    <Compile Include="Model\Irregulardata.cs" />
+    <Compile Include="Model\OverseasDetailed.cs" />
+    <Compile Include="Model\Summary.cs" />
+    <Compile Include="Model\OverseasRental.cs" />
+    <Compile Include="Model\OverseasCapital.cs" />
+    <Compile Include="Model\OverseasAsset.cs" />
+    <Compile Include="Model\OverseasIncome.cs" />
+    <Compile Include="Model\TaxForm.cs" />
+    <Compile Include="Model\IEIncome.cs" />
+    <Compile Include="Model\Exchange.cs" />
+    <Compile Include="Model\Family.cs" />
+    <Compile Include="Model\Relationship.cs" />
+    <Compile Include="Model\Marital.cs" />
+    <Compile Include="Model\TaxPlayer.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AssetsliabilitiesRepository.cs" />
+    <Compile Include="Repository\AssetRepository.cs" />
+    <Compile Include="Repository\CalculationRepository.cs" />
+    <Compile Include="Repository\comRepository.cs" />
+    <Compile Include="Repository\etRepository.cs" />
+    <Compile Include="Repository\ecRepository.cs" />
+    <Compile Include="Repository\IrregularRepository.cs" />
+    <Compile Include="Repository\OverseasDetailedRepository.cs" />
+    <Compile Include="Repository\OverseasCapitalRepository.cs" />
+    <Compile Include="Repository\OverseasRentalRepository.cs" />
+    <Compile Include="Repository\OverseasIncomeRepository.cs" />
+    <Compile Include="Repository\TaxFormRepository.cs" />
+    <Compile Include="Repository\IEIncomeRepository.cs" />
+    <Compile Include="Repository\FamilyRepository.cs" />
+    <Compile Include="Repository\ExchangeRepository.cs" />
+    <Compile Include="Repository\RelationshipRepository.cs" />
+    <Compile Include="Repository\MaritalRepository.cs" />
+    <Compile Include="Repository\TaxPlayerRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="RoleEnum.cs" />
+    <Compile Include="Services\AssetsliabilitiesServices.cs" />
+    <Compile Include="Services\AssetServices.cs" />
+    <Compile Include="Services\CalculationServices.cs" />
+    <Compile Include="Services\comServices.cs" />
+    <Compile Include="Services\etServices.cs" />
+    <Compile Include="Services\ecServices.cs" />
+    <Compile Include="Services\IrregularServices.cs" />
+    <Compile Include="Services\OverseasDetailedServices.cs" />
+    <Compile Include="Services\OverseasIncomeServices.cs" />
+    <Compile Include="Services\OverseasRentalServices.cs" />
+    <Compile Include="Services\OverseasCapitalServices.cs" />
+    <Compile Include="Services\TaxFormServices.cs" />
+    <Compile Include="Services\IEIncomeServices.cs" />
+    <Compile Include="Services\FamilyServices.cs" />
+    <Compile Include="Services\ExchangeServices.cs" />
+    <Compile Include="Services\RelationshipServices.cs" />
+    <Compile Include="Services\MaritalServices.cs" />
+    <Compile Include="Services\Hash.cs" />
+    <Compile Include="Services\ServicesFactory.cs" />
+    <Compile Include="Services\TaxPlayerServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataContext\Delloite.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Delloite.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataContext\Delloite.dbml.layout">
+      <DependentUpon>Delloite.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

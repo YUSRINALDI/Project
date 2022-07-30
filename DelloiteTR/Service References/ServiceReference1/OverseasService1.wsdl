@@ -1,0 +1,1925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOverseasIncome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasIncome" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OverseasIncome">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateofreceipt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="interval" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exchrate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomecurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidcurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomerp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="treatyrate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ftc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="allowedftc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="irregularincome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createdby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updatedby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updateddate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddOverseasIncomeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddAsset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasAsset" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OverseasAsset">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_refnumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_details" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_balancedate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_interval" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_originalcurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_exchrate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="as_inrupiah" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createdby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updatedby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updateddate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddAssetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddRental">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasRental" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OverseasRental">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_information" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_dateofreceipt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_interval" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_exchrate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_amountcurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_amountrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_irregularincome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createdby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updatedby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updateddate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddRentalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddCapital">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasCapital" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OverseasCapital">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_sellingdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_interval" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_exchrate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_proceeds" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_cost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_gainloss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_taxpaid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_gainlossrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_taxpaidrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_irregularincome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createdby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updatedby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updateddate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCapitalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditOverseasIncome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasIncome" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditOverseasIncomeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditAsset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasAsset" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAssetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditRental">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasRental" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditRentalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditCapital">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasCapital" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditCapitalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrency">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrencyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="interval" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExchangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIncomeBy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomeByResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSummary2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummary2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummary2Result" type="tns:ArrayOfSummary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSummary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Summary" nillable="true" type="tns:Summary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Summary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomerp1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidrp1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomecurrency1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidcurrency1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="allowedftc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomerp2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidrp2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomecurrency2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidcurrency2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="allowedftc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomerp3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidrp3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomecurrency3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxpaidcurrency3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="allowedftc3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_gainlossrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_taxpaidrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_gainloss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cap_taxpaid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetIncomeByCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomeByCountryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIrregularIncome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIrregularIncomeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAssetBy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssetByResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRentalBy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentalByResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRentalByCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentalByCountryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCapitalBy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCapitalByResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCapitalByCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaxPlayerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCapitalByCountryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteIncome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasIncome" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteIncomeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAsset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasAsset" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAssetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteRental">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasRental" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRentalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteCapital">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="tns:OverseasAsset" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCapitalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIncomeByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomeByIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAssetByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssetByIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRentalByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentalByIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCapitalByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCapitalByIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDescriptionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfSummary" nillable="true" type="tns:ArrayOfSummary" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOverseasIncomeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOverseasIncome" />
+  </wsdl:message>
+  <wsdl:message name="AddOverseasIncomeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOverseasIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAssetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAsset" />
+  </wsdl:message>
+  <wsdl:message name="AddAssetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRentalSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRental" />
+  </wsdl:message>
+  <wsdl:message name="AddRentalSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRentalResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCapitalSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCapital" />
+  </wsdl:message>
+  <wsdl:message name="AddCapitalSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCapitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditOverseasIncomeSoapIn">
+    <wsdl:part name="parameters" element="tns:EditOverseasIncome" />
+  </wsdl:message>
+  <wsdl:message name="EditOverseasIncomeSoapOut">
+    <wsdl:part name="parameters" element="tns:EditOverseasIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditAssetSoapIn">
+    <wsdl:part name="parameters" element="tns:EditAsset" />
+  </wsdl:message>
+  <wsdl:message name="EditAssetSoapOut">
+    <wsdl:part name="parameters" element="tns:EditAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditRentalSoapIn">
+    <wsdl:part name="parameters" element="tns:EditRental" />
+  </wsdl:message>
+  <wsdl:message name="EditRentalSoapOut">
+    <wsdl:part name="parameters" element="tns:EditRentalResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditCapitalSoapIn">
+    <wsdl:part name="parameters" element="tns:EditCapital" />
+  </wsdl:message>
+  <wsdl:message name="EditCapitalSoapOut">
+    <wsdl:part name="parameters" element="tns:EditCapitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrency" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExchange" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeBySoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomeBy" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeBySoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomeByResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummary2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummary2" />
+  </wsdl:message>
+  <wsdl:message name="GetSummary2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummary2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomeByCountry" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomeByCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIrregularIncomeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIrregularIncome" />
+  </wsdl:message>
+  <wsdl:message name="GetIrregularIncomeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIrregularIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetBySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssetBy" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetBySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssetByResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalBySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRentalBy" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalBySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRentalByResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRentalByCountry" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRentalByCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalBySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCapitalBy" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalBySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCapitalByResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCapitalByCountry" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCapitalByCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIncomeSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteIncome" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIncomeSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAssetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAsset" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAssetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRentalSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRental" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRentalSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRentalResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCapitalSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCapital" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCapitalSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCapitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomeByID" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomeByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssetByID" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRentalByID" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRentalByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCapitalByID" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCapitalByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyHttpGetIn" />
+  <wsdl:message name="GetCurrencyHttpGetOut" />
+  <wsdl:message name="GetExchangeHttpGetIn">
+    <wsdl:part name="currency" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="interval" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeHttpGetOut" />
+  <wsdl:message name="GetIncomeByHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByHttpGetOut" />
+  <wsdl:message name="GetSummaryHttpGetIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryHttpGetOut" />
+  <wsdl:message name="GetSummary2HttpGetIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummary2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByCountryHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByCountryHttpGetOut" />
+  <wsdl:message name="GetIrregularIncomeHttpGetIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIrregularIncomeHttpGetOut" />
+  <wsdl:message name="GetAssetByHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetByHttpGetOut" />
+  <wsdl:message name="GetRentalByHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByHttpGetOut" />
+  <wsdl:message name="GetRentalByCountryHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByCountryHttpGetOut" />
+  <wsdl:message name="GetCapitalByHttpGetIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByHttpGetOut" />
+  <wsdl:message name="GetCapitalByCountryHttpGetIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByCountryHttpGetOut" />
+  <wsdl:message name="GetIncomeByIDHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByIDHttpGetOut" />
+  <wsdl:message name="GetAssetByIDHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetByIDHttpGetOut" />
+  <wsdl:message name="GetRentalByIDHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByIDHttpGetOut" />
+  <wsdl:message name="GetCapitalByIDHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByIDHttpGetOut" />
+  <wsdl:message name="GetDescriptionHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionHttpGetOut" />
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyHttpPostIn" />
+  <wsdl:message name="GetCurrencyHttpPostOut" />
+  <wsdl:message name="GetExchangeHttpPostIn">
+    <wsdl:part name="currency" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="interval" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeHttpPostOut" />
+  <wsdl:message name="GetIncomeByHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByHttpPostOut" />
+  <wsdl:message name="GetSummaryHttpPostIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryHttpPostOut" />
+  <wsdl:message name="GetSummary2HttpPostIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummary2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByCountryHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByCountryHttpPostOut" />
+  <wsdl:message name="GetIrregularIncomeHttpPostIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIrregularIncomeHttpPostOut" />
+  <wsdl:message name="GetAssetByHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetByHttpPostOut" />
+  <wsdl:message name="GetRentalByHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByHttpPostOut" />
+  <wsdl:message name="GetRentalByCountryHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByCountryHttpPostOut" />
+  <wsdl:message name="GetCapitalByHttpPostIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByHttpPostOut" />
+  <wsdl:message name="GetCapitalByCountryHttpPostIn">
+    <wsdl:part name="TaxPlayerNumber" type="s:string" />
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByCountryHttpPostOut" />
+  <wsdl:message name="GetIncomeByIDHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomeByIDHttpPostOut" />
+  <wsdl:message name="GetAssetByIDHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAssetByIDHttpPostOut" />
+  <wsdl:message name="GetRentalByIDHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRentalByIDHttpPostOut" />
+  <wsdl:message name="GetCapitalByIDHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitalByIDHttpPostOut" />
+  <wsdl:message name="GetDescriptionHttpPostIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionHttpPostOut" />
+  <wsdl:portType name="OverseasServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOverseasIncome">
+      <wsdl:input message="tns:AddOverseasIncomeSoapIn" />
+      <wsdl:output message="tns:AddOverseasIncomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAsset">
+      <wsdl:input message="tns:AddAssetSoapIn" />
+      <wsdl:output message="tns:AddAssetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRental">
+      <wsdl:input message="tns:AddRentalSoapIn" />
+      <wsdl:output message="tns:AddRentalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCapital">
+      <wsdl:input message="tns:AddCapitalSoapIn" />
+      <wsdl:output message="tns:AddCapitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditOverseasIncome">
+      <wsdl:input message="tns:EditOverseasIncomeSoapIn" />
+      <wsdl:output message="tns:EditOverseasIncomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAsset">
+      <wsdl:input message="tns:EditAssetSoapIn" />
+      <wsdl:output message="tns:EditAssetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRental">
+      <wsdl:input message="tns:EditRentalSoapIn" />
+      <wsdl:output message="tns:EditRentalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCapital">
+      <wsdl:input message="tns:EditCapitalSoapIn" />
+      <wsdl:output message="tns:EditCapitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <wsdl:input message="tns:GetCurrencySoapIn" />
+      <wsdl:output message="tns:GetCurrencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <wsdl:input message="tns:GetExchangeSoapIn" />
+      <wsdl:output message="tns:GetExchangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <wsdl:input message="tns:GetIncomeBySoapIn" />
+      <wsdl:output message="tns:GetIncomeBySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <wsdl:input message="tns:GetSummarySoapIn" />
+      <wsdl:output message="tns:GetSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <wsdl:input message="tns:GetSummary2SoapIn" />
+      <wsdl:output message="tns:GetSummary2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <wsdl:input message="tns:GetIncomeByCountrySoapIn" />
+      <wsdl:output message="tns:GetIncomeByCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <wsdl:input message="tns:GetIrregularIncomeSoapIn" />
+      <wsdl:output message="tns:GetIrregularIncomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <wsdl:input message="tns:GetAssetBySoapIn" />
+      <wsdl:output message="tns:GetAssetBySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <wsdl:input message="tns:GetRentalBySoapIn" />
+      <wsdl:output message="tns:GetRentalBySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <wsdl:input message="tns:GetRentalByCountrySoapIn" />
+      <wsdl:output message="tns:GetRentalByCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <wsdl:input message="tns:GetCapitalBySoapIn" />
+      <wsdl:output message="tns:GetCapitalBySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <wsdl:input message="tns:GetCapitalByCountrySoapIn" />
+      <wsdl:output message="tns:GetCapitalByCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIncome">
+      <wsdl:input message="tns:DeleteIncomeSoapIn" />
+      <wsdl:output message="tns:DeleteIncomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsset">
+      <wsdl:input message="tns:DeleteAssetSoapIn" />
+      <wsdl:output message="tns:DeleteAssetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRental">
+      <wsdl:input message="tns:DeleteRentalSoapIn" />
+      <wsdl:output message="tns:DeleteRentalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCapital">
+      <wsdl:input message="tns:DeleteCapitalSoapIn" />
+      <wsdl:output message="tns:DeleteCapitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <wsdl:input message="tns:GetIncomeByIDSoapIn" />
+      <wsdl:output message="tns:GetIncomeByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <wsdl:input message="tns:GetAssetByIDSoapIn" />
+      <wsdl:output message="tns:GetAssetByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <wsdl:input message="tns:GetRentalByIDSoapIn" />
+      <wsdl:output message="tns:GetRentalByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <wsdl:input message="tns:GetCapitalByIDSoapIn" />
+      <wsdl:output message="tns:GetCapitalByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <wsdl:input message="tns:GetDescriptionSoapIn" />
+      <wsdl:output message="tns:GetDescriptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OverseasServiceHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <wsdl:input message="tns:GetCurrencyHttpGetIn" />
+      <wsdl:output message="tns:GetCurrencyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <wsdl:input message="tns:GetExchangeHttpGetIn" />
+      <wsdl:output message="tns:GetExchangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <wsdl:input message="tns:GetIncomeByHttpGetIn" />
+      <wsdl:output message="tns:GetIncomeByHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <wsdl:input message="tns:GetSummaryHttpGetIn" />
+      <wsdl:output message="tns:GetSummaryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <wsdl:input message="tns:GetSummary2HttpGetIn" />
+      <wsdl:output message="tns:GetSummary2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <wsdl:input message="tns:GetIncomeByCountryHttpGetIn" />
+      <wsdl:output message="tns:GetIncomeByCountryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <wsdl:input message="tns:GetIrregularIncomeHttpGetIn" />
+      <wsdl:output message="tns:GetIrregularIncomeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <wsdl:input message="tns:GetAssetByHttpGetIn" />
+      <wsdl:output message="tns:GetAssetByHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <wsdl:input message="tns:GetRentalByHttpGetIn" />
+      <wsdl:output message="tns:GetRentalByHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <wsdl:input message="tns:GetRentalByCountryHttpGetIn" />
+      <wsdl:output message="tns:GetRentalByCountryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <wsdl:input message="tns:GetCapitalByHttpGetIn" />
+      <wsdl:output message="tns:GetCapitalByHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <wsdl:input message="tns:GetCapitalByCountryHttpGetIn" />
+      <wsdl:output message="tns:GetCapitalByCountryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <wsdl:input message="tns:GetIncomeByIDHttpGetIn" />
+      <wsdl:output message="tns:GetIncomeByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <wsdl:input message="tns:GetAssetByIDHttpGetIn" />
+      <wsdl:output message="tns:GetAssetByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <wsdl:input message="tns:GetRentalByIDHttpGetIn" />
+      <wsdl:output message="tns:GetRentalByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <wsdl:input message="tns:GetCapitalByIDHttpGetIn" />
+      <wsdl:output message="tns:GetCapitalByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <wsdl:input message="tns:GetDescriptionHttpGetIn" />
+      <wsdl:output message="tns:GetDescriptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OverseasServiceHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <wsdl:input message="tns:GetCurrencyHttpPostIn" />
+      <wsdl:output message="tns:GetCurrencyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <wsdl:input message="tns:GetExchangeHttpPostIn" />
+      <wsdl:output message="tns:GetExchangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <wsdl:input message="tns:GetIncomeByHttpPostIn" />
+      <wsdl:output message="tns:GetIncomeByHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <wsdl:input message="tns:GetSummaryHttpPostIn" />
+      <wsdl:output message="tns:GetSummaryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <wsdl:input message="tns:GetSummary2HttpPostIn" />
+      <wsdl:output message="tns:GetSummary2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <wsdl:input message="tns:GetIncomeByCountryHttpPostIn" />
+      <wsdl:output message="tns:GetIncomeByCountryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <wsdl:input message="tns:GetIrregularIncomeHttpPostIn" />
+      <wsdl:output message="tns:GetIrregularIncomeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <wsdl:input message="tns:GetAssetByHttpPostIn" />
+      <wsdl:output message="tns:GetAssetByHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <wsdl:input message="tns:GetRentalByHttpPostIn" />
+      <wsdl:output message="tns:GetRentalByHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <wsdl:input message="tns:GetRentalByCountryHttpPostIn" />
+      <wsdl:output message="tns:GetRentalByCountryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <wsdl:input message="tns:GetCapitalByHttpPostIn" />
+      <wsdl:output message="tns:GetCapitalByHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <wsdl:input message="tns:GetCapitalByCountryHttpPostIn" />
+      <wsdl:output message="tns:GetCapitalByCountryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <wsdl:input message="tns:GetIncomeByIDHttpPostIn" />
+      <wsdl:output message="tns:GetIncomeByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <wsdl:input message="tns:GetAssetByIDHttpPostIn" />
+      <wsdl:output message="tns:GetAssetByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <wsdl:input message="tns:GetRentalByIDHttpPostIn" />
+      <wsdl:output message="tns:GetRentalByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <wsdl:input message="tns:GetCapitalByIDHttpPostIn" />
+      <wsdl:output message="tns:GetCapitalByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <wsdl:input message="tns:GetDescriptionHttpPostIn" />
+      <wsdl:output message="tns:GetDescriptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OverseasServiceSoap" type="tns:OverseasServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOverseasIncome">
+      <soap:operation soapAction="http://tempuri.org/AddOverseasIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAsset">
+      <soap:operation soapAction="http://tempuri.org/AddAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRental">
+      <soap:operation soapAction="http://tempuri.org/AddRental" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCapital">
+      <soap:operation soapAction="http://tempuri.org/AddCapital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditOverseasIncome">
+      <soap:operation soapAction="http://tempuri.org/EditOverseasIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAsset">
+      <soap:operation soapAction="http://tempuri.org/EditAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditRental">
+      <soap:operation soapAction="http://tempuri.org/EditRental" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCapital">
+      <soap:operation soapAction="http://tempuri.org/EditCapital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <soap:operation soapAction="http://tempuri.org/GetCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <soap:operation soapAction="http://tempuri.org/GetExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <soap:operation soapAction="http://tempuri.org/GetIncomeBy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <soap:operation soapAction="http://tempuri.org/GetSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <soap:operation soapAction="http://tempuri.org/GetSummary2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <soap:operation soapAction="http://tempuri.org/GetIncomeByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <soap:operation soapAction="http://tempuri.org/GetIrregularIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <soap:operation soapAction="http://tempuri.org/GetAssetBy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <soap:operation soapAction="http://tempuri.org/GetRentalBy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <soap:operation soapAction="http://tempuri.org/GetRentalByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <soap:operation soapAction="http://tempuri.org/GetCapitalBy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <soap:operation soapAction="http://tempuri.org/GetCapitalByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIncome">
+      <soap:operation soapAction="http://tempuri.org/DeleteIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsset">
+      <soap:operation soapAction="http://tempuri.org/DeleteAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRental">
+      <soap:operation soapAction="http://tempuri.org/DeleteRental" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCapital">
+      <soap:operation soapAction="http://tempuri.org/DeleteCapital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <soap:operation soapAction="http://tempuri.org/GetIncomeByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <soap:operation soapAction="http://tempuri.org/GetAssetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <soap:operation soapAction="http://tempuri.org/GetRentalByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <soap:operation soapAction="http://tempuri.org/GetCapitalByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <soap:operation soapAction="http://tempuri.org/GetDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OverseasServiceSoap12" type="tns:OverseasServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOverseasIncome">
+      <soap12:operation soapAction="http://tempuri.org/AddOverseasIncome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAsset">
+      <soap12:operation soapAction="http://tempuri.org/AddAsset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRental">
+      <soap12:operation soapAction="http://tempuri.org/AddRental" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCapital">
+      <soap12:operation soapAction="http://tempuri.org/AddCapital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditOverseasIncome">
+      <soap12:operation soapAction="http://tempuri.org/EditOverseasIncome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAsset">
+      <soap12:operation soapAction="http://tempuri.org/EditAsset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditRental">
+      <soap12:operation soapAction="http://tempuri.org/EditRental" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCapital">
+      <soap12:operation soapAction="http://tempuri.org/EditCapital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <soap12:operation soapAction="http://tempuri.org/GetExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <soap12:operation soapAction="http://tempuri.org/GetIncomeBy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <soap12:operation soapAction="http://tempuri.org/GetSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <soap12:operation soapAction="http://tempuri.org/GetSummary2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <soap12:operation soapAction="http://tempuri.org/GetIncomeByCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <soap12:operation soapAction="http://tempuri.org/GetIrregularIncome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <soap12:operation soapAction="http://tempuri.org/GetAssetBy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <soap12:operation soapAction="http://tempuri.org/GetRentalBy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <soap12:operation soapAction="http://tempuri.org/GetRentalByCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <soap12:operation soapAction="http://tempuri.org/GetCapitalBy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <soap12:operation soapAction="http://tempuri.org/GetCapitalByCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIncome">
+      <soap12:operation soapAction="http://tempuri.org/DeleteIncome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsset">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAsset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRental">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRental" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCapital">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCapital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <soap12:operation soapAction="http://tempuri.org/GetIncomeByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <soap12:operation soapAction="http://tempuri.org/GetAssetByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <soap12:operation soapAction="http://tempuri.org/GetRentalByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <soap12:operation soapAction="http://tempuri.org/GetCapitalByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <soap12:operation soapAction="http://tempuri.org/GetDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OverseasServiceHttpGet" type="tns:OverseasServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <http:operation location="/GetCurrency" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <http:operation location="/GetExchange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <http:operation location="/GetIncomeBy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <http:operation location="/GetSummary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <http:operation location="/GetSummary2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <http:operation location="/GetIncomeByCountry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <http:operation location="/GetIrregularIncome" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <http:operation location="/GetAssetBy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <http:operation location="/GetRentalBy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <http:operation location="/GetRentalByCountry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <http:operation location="/GetCapitalBy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <http:operation location="/GetCapitalByCountry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <http:operation location="/GetIncomeByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <http:operation location="/GetAssetByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <http:operation location="/GetRentalByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <http:operation location="/GetCapitalByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <http:operation location="/GetDescription" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OverseasServiceHttpPost" type="tns:OverseasServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrency">
+      <http:operation location="/GetCurrency" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchange">
+      <http:operation location="/GetExchange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeBy">
+      <http:operation location="/GetIncomeBy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <http:operation location="/GetSummary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary2">
+      <http:operation location="/GetSummary2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByCountry">
+      <http:operation location="/GetIncomeByCountry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIrregularIncome">
+      <http:operation location="/GetIrregularIncome" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetBy">
+      <http:operation location="/GetAssetBy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalBy">
+      <http:operation location="/GetRentalBy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByCountry">
+      <http:operation location="/GetRentalByCountry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalBy">
+      <http:operation location="/GetCapitalBy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByCountry">
+      <http:operation location="/GetCapitalByCountry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomeByID">
+      <http:operation location="/GetIncomeByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetByID">
+      <http:operation location="/GetAssetByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalByID">
+      <http:operation location="/GetRentalByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitalByID">
+      <http:operation location="/GetCapitalByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <http:operation location="/GetDescription" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OverseasService">
+    <wsdl:port name="OverseasServiceSoap" binding="tns:OverseasServiceSoap">
+      <soap:address location="http://104.250.105.196/delloite/OverseasService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OverseasServiceSoap12" binding="tns:OverseasServiceSoap12">
+      <soap12:address location="http://104.250.105.196/delloite/OverseasService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OverseasServiceHttpGet" binding="tns:OverseasServiceHttpGet">
+      <http:address location="http://104.250.105.196/delloite/OverseasService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OverseasServiceHttpPost" binding="tns:OverseasServiceHttpPost">
+      <http:address location="http://104.250.105.196/delloite/OverseasService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

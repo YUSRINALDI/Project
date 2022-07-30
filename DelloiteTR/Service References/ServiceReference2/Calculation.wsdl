@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaxFormByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaxFormByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaxFormByIDResult" type="tns:ArrayOfTaxForm" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTaxForm">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TaxForm" nillable="true" type="tns:TaxForm" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TaxForm">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaxPayerNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ammend" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxidnumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s1f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s1f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s1f5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s1f6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s1f7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s1f8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s2f24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s3f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s3f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s3f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f26" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f27" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f33" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f34" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f35" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f36" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f37" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f38" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f39" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f40" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f41" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f42" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f43" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f44" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f45" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f46" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f47" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f48" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f49" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f50" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f51" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f52" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f53" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f54" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s4f55" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s6f25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f26" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f27" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f33" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f34" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f35" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f36" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f37" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f38" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s7f39" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f26" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f27" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f33" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f34" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f35" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f36" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f37" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f38" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f39" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f40" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f41" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f42" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1s8f43" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalemployee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalperiod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalsalaries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalincome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalother" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalhonorarium" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalinsurance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalbenefit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalbonus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalgross" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalcost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalpension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totaldeductions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalnetincome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalincometax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalprevnetincome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalprevincometax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total26" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_netamountcurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_netamountrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_nettaxpaidcurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_nettaxpaidexchrate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ren_nettaxpaidamountrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabirregulartotal1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabirregulartotal2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="irregulartaxcredit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lbltotalsummary1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lbltotalsummary2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tabasset10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab3nettotalasset" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab3nettotalliabilities" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tab3netasset" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="netincomeroundedyes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bonusroundedyes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalperiodroundedyes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="netincomeroundednot" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bonusroundednot" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalperiodroundednot" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createdby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updatedby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updateddate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetIEIncomeByRounded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="form" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="field8" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIEIncomeByRoundedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfTaxForm" nillable="true" type="tns:ArrayOfTaxForm" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxFormByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaxFormByID" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxFormByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaxFormByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIEIncomeByRoundedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIEIncomeByRounded" />
+  </wsdl:message>
+  <wsdl:message name="GetIEIncomeByRoundedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIEIncomeByRoundedResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxFormByIDHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxFormByIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTaxForm" />
+  </wsdl:message>
+  <wsdl:message name="GetIEIncomeByRoundedHttpGetIn">
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="field8" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIEIncomeByRoundedHttpGetOut" />
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxFormByIDHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxFormByIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTaxForm" />
+  </wsdl:message>
+  <wsdl:message name="GetIEIncomeByRoundedHttpPostIn">
+    <wsdl:part name="form" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="field8" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIEIncomeByRoundedHttpPostOut" />
+  <wsdl:portType name="CalculationSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <wsdl:input message="tns:GetTaxFormByIDSoapIn" />
+      <wsdl:output message="tns:GetTaxFormByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <wsdl:input message="tns:GetIEIncomeByRoundedSoapIn" />
+      <wsdl:output message="tns:GetIEIncomeByRoundedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CalculationHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <wsdl:input message="tns:GetTaxFormByIDHttpGetIn" />
+      <wsdl:output message="tns:GetTaxFormByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <wsdl:input message="tns:GetIEIncomeByRoundedHttpGetIn" />
+      <wsdl:output message="tns:GetIEIncomeByRoundedHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CalculationHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <wsdl:input message="tns:GetTaxFormByIDHttpPostIn" />
+      <wsdl:output message="tns:GetTaxFormByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <wsdl:input message="tns:GetIEIncomeByRoundedHttpPostIn" />
+      <wsdl:output message="tns:GetIEIncomeByRoundedHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculationSoap" type="tns:CalculationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <soap:operation soapAction="http://tempuri.org/GetTaxFormByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <soap:operation soapAction="http://tempuri.org/GetIEIncomeByRounded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculationSoap12" type="tns:CalculationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <soap12:operation soapAction="http://tempuri.org/GetTaxFormByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <soap12:operation soapAction="http://tempuri.org/GetIEIncomeByRounded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculationHttpGet" type="tns:CalculationHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <http:operation location="/GetTaxFormByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <http:operation location="/GetIEIncomeByRounded" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculationHttpPost" type="tns:CalculationHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxFormByID">
+      <http:operation location="/GetTaxFormByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEIncomeByRounded">
+      <http:operation location="/GetIEIncomeByRounded" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculation">
+    <wsdl:port name="CalculationSoap" binding="tns:CalculationSoap">
+      <soap:address location="http://104.250.105.196/delloite/Calculation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculationSoap12" binding="tns:CalculationSoap12">
+      <soap12:address location="http://104.250.105.196/delloite/Calculation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculationHttpGet" binding="tns:CalculationHttpGet">
+      <http:address location="http://104.250.105.196/delloite/Calculation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculationHttpPost" binding="tns:CalculationHttpPost">
+      <http:address location="http://104.250.105.196/delloite/Calculation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

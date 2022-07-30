@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Delloite.Web-Web.config Connection String" description="Delloite.Web Connection String used in web.config by the application to access the database." defaultvalue="Data Source=IHSANFULL;Initial Catalog=TRWEBDB;Integrated Security=false;user id=sa; Password=passw0rd;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Delloite.Web']/@connectionString" />
+  </parameter>
+</parameters>

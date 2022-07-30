@@ -1,0 +1,5 @@
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTRLib\bin\Debug\DelloiteTRLib.dll.config
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTRLib\bin\Debug\DelloiteTRLib.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTRLib\bin\Debug\DelloiteTRLib.pdb
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTRLib\obj\Debug\DelloiteTRLib.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTRLib\obj\Debug\DelloiteTRLib.pdb

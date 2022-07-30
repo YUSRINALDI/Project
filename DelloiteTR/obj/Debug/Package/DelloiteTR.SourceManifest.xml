@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Debug\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <dbFullSql path="D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Debug\AutoScripts\Delloite.Web-Deployment_SchemaAndData.sql" Transacted="True" />
+</sitemanifest>

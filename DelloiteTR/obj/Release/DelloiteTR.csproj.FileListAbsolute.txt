@@ -1,0 +1,15 @@
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\DelloiteTR.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\DelloiteTR.pdb
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\DelloiteTRLib.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\SpreadsheetLight.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\DelloiteTRLib.pdb
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Release\DelloiteTR.csprojResolveAssemblyReference.cache
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Release\DelloiteTR.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\obj\Release\DelloiteTR.pdb
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.Common.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.Pdf.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.XLS.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.License.dll
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.Common.xml
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.Pdf.xml
+D:\PROJECT\Delloite\Tax\02. Source\DelloiteTR\DelloiteTR\bin\Spire.XLS.xml
